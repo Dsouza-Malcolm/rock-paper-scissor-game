@@ -72,7 +72,7 @@
   border: 2px solid var(--header);
   border-radius: 10px;
   width: 85%;
-  margin: 0 auto;
+  margin: 1rem auto;
   padding: 15px;
 }
 
@@ -110,7 +110,7 @@
 .triangle-box {
   position: relative;
   width: 50%;
-  margin: 8rem 0;
+  margin: 7rem 0;
 }
 .triangle {
   width: 100%;

@@ -14,6 +14,7 @@ const computerIcon = document.querySelector('.computer-choice-icon');
 const waitingCircle = document.querySelector('.waiting-circle');
 const result = document.querySelector('.result');
 const resultMessage = document.querySelector('.message');
+const playAgainBtn = document.getElementById('play-btn');
 
 const choice = ['paper', 'rock', 'scissor'];
 let userSelected;
@@ -47,7 +48,6 @@ function displayComputerChoice() {
   computerChoice.classList.remove('hidden');
   waitingCircle.classList.add('hidden');
   const computerSelected = choice[Math.trunc(Math.random() * 3)];
-  console.log(computerSelected);
 
   computerChoice.classList.add(`${computerSelected}`);
   computerIcon.src = `./images/icon-${computerSelected}.svg`;
@@ -55,7 +55,6 @@ function displayComputerChoice() {
   if (userSelected === computerSelected) {
     result.classList.remove('hidden');
     resultMessage.textContent = "it's draw";
-    console.log('draw');
   } else if (
     (userSelected === 'paper' && computerSelected === 'rock') ||
     (userSelected === 'rock' && computerSelected === 'scissor') ||
@@ -63,10 +62,18 @@ function displayComputerChoice() {
   ) {
     result.classList.remove('hidden');
     resultMessage.textContent = 'you win';
-    console.log('user win');
   } else {
     result.classList.remove('hidden');
     resultMessage.textContent = 'you lose';
-    console.log('computer win');
   }
 }
+
+playAgainBtn.addEventListener('click', function () {
+  triangle.classList.remove('hidden');
+  resultContaienr.classList.add('hidden');
+  result.classList.add('hidden');
+  computerChoice.classList.remove('rock', 'scissor', 'paper');
+  userChoice.classList.remove('rock', 'scissor', 'paper');
+  computerChoice.classList.add('hidden');
+  waitingCircle.classList.remove('hidden');
+});
