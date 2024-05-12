@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+    You Win You Lose Play Again
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body id="body">
+    <div class="rules-window hidden">
+      <div class="rules-title">
+        <p>Rules</p>
+        <button id="desk-close-btn" class="close-btn" type="button">
+          <img src="./images/icon-close.svg" alt="close btn" />
+        </button>
+      </div>
+      <img src="./images/image-rules.svg" class="rules-img" alt="rules image" />
+      <button id="mob-close-btn" class="close-btn" type="button">
+        <img src="./images/icon-close.svg" alt="close btn" />
+      </button>
+    </div>
+
+    <section id="con">
+      <div class="game-header">
+        <img src="./images/logo.svg" alt="logo" />
+        <div class="score-box">
+          <p>score</p>
+          <p id="score">12</p>
+        </div>
+      </div>
+
+      <div class="game-con">
+        <div class="triangle-box">
+          <img src="./images/bg-triangle.svg" class="triangle" alt="triangle" />
+
+          <div class="rps absolute scissor">
+            <div>
+              <img
+                src="./images/icon-scissor.svg"
+                class="rps-icon"
+                id="scissor"
+                alt="scissor"
+              />
+            </div>
+          </div>
+          <div class="rock translate absolute rps">
+            <div>
+              <img
+                src="./images/icon-rock.svg"
+                id="rock"
+                class="rps-icon"
+                alt="rock"
+              />
+            </div>
+          </div>
+          <div class="paper absolute rps">
+            <div>
+              <img
+                src="./images/icon-paper.svg"
+                id="paper"
+                class="rps-icon"
+                alt="paper"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="result-container hidden">
+          <div class="user-choice choice">
+            <div class="user-selected rps">
+              <div>
+                <img
+                  src="./images/icon-paper.svg"
+                  class="user-choice-icon"
+                  alt="paper"
+                />
+              </div>
+            </div>
+            <p>You Picked</p>
+          </div>
+          <div class="computer-choice choice">
+            <div class="waiting-circle"></div>
+            <div class="computer-selected hidden rps">
+              <div>
+                <img
+                  src="./images/icon-rock.svg"
+                  class="computer-choice-icon"
+                  alt="paper"
+                />
+              </div>
+            </div>
+            <p>The House Picked</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-message">
+        <div class="result hidden">
+          <p class="message">you win</p>
+          <button id="play-btn">play again</button>
+        </div>
+      </div>
+
+      <button id="rules-btn">Rules</button>
+    </section>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+
+    <script src="./javascript/main.js"></script>
+  </body>
+</html>

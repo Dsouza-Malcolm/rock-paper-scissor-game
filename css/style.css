@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff: 'Barlow Semi Condensed', sans-serif;
+
+  --fs-08: 0.8rem;
+  --fs-15: 1.5rem;
+  --fs-2: 2rem;
+  --fs-12: 1.2rem;
+  --fs-para: 1rem;
+  --fs-h1: 2.5rem;
+
+  --scissors: hsl(39, 89%, 49%) to hsl(40, 84%, 53%);
+  --paper: hsl(230, 89%, 62%) to hsl(230, 89%, 65%);
+  --rock: hsl(349, 71%, 52%) to hsl(349, 70%, 56%);
+
+  --background: hsl(214, 47%, 23%) to hsl(237, 49%, 15%);
+  --dark-txt: hsl(229, 25%, 31%);
+  --score-txt: hsl(229, 64%, 46%);
+  --header: hsl(217, 16%, 45%);
+}
+
+#body {
+  font-family: var(--ff);
+  min-height: 100vh;
+  background: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%)) no-repeat;
+}
+
+/* rules window */
+.rules-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 999;
+}
+
+.rules-header p {
+  color: var(--dark-txt);
+  font-weight: 700;
+  font-size: var(--fs-2);
+  text-align: center;
+}
+
+.rules-header .close-btn {
+  display: none;
+}
+
+.close-btn {
+  background-color: transparent;
+  border: none;
+}
+
+/* games header */
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid var(--header);
+  border-radius: 10px;
+  width: 85%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.game-header img {
+  width: 100px;
+}
+
+.score-box {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+}
+.score-box p:nth-child(1) {
+  font-size: var(--fs-08);
+  color: var(--score-txt);
+}
+#score {
+  color: var(--dark-txt);
+  font-size: var(--fs-h1);
+  font-weight: 700;
+}
+
+/* game styeling */
+.game-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.triangle-box {
+  position: relative;
+  width: 50%;
+  margin: 8rem 0;
+}
+.triangle {
+  width: 100%;
+}
+.rps-icon {
+  width: 40px;
+}
+.absolute {
+  position: absolute;
+}
+.rps {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rps div {
+  background-color: white;
+  width: 80px;
+  height: 80px;
+  padding: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.paper {
+  top: -30px;
+  left: -30px;
+  background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+}
+
+.scissor {
+  right: -30px;
+  top: -30px;
+  background: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+}
+.translate {
+  transform: translateX(50%);
+}
+.rock {
+  bottom: -30px;
+  right: 50%;
+  background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+}
+#rules-btn {
+  display: block;
+  background-color: transparent;
+  color: white;
+  font-size: var(--fs-08);
+  text-transform: uppercase;
+  padding: 0.5rem 2rem;
+  margin: 0 auto;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+.result-container {
+  width: 85%;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.waiting-circle {
+  width: 80px;
+  height: 80px;
+  border: none;
+  margin-bottom: 5px;
+  border-radius: 50%;
+  background-color: hsl(214, 47%, 23%);
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 1rem;
+}
+
+.choice p {
+  color: white;
+  text-transform: uppercase;
+  font-size: var(--fs-08);
+  font-weight: 700;
+}
+.result-message {
+  min-height: 150px;
+  display: flex;
+  justify-content: center;
+}
+.result {
+  width: fit-content;
+}
+.message {
+  color: white;
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+#play-btn {
+  display: block;
+  margin: 0 auto;
+  color: var(--dark-txt);
+  background-color: white;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  padding: 0.8em 2em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+}
+
+@media (min-width: 700px) {
+  #con {
+    width: auto;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+
+.hidden {
+  display: none;
+}
