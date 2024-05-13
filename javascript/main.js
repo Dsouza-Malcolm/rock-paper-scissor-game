@@ -15,9 +15,13 @@ const waitingCircle = document.querySelector('.waiting-circle');
 const result = document.querySelector('.result');
 const resultMessage = document.querySelector('.message');
 const playAgainBtn = document.getElementById('play-btn');
+const scoreEl = document.getElementById('score');
 
 const choice = ['paper', 'rock', 'scissor'];
 let userSelected;
+let score = 0;
+
+scoreEl.textContent = score;
 
 rulesCloseBtn.addEventListener('click', function () {
   rulesWindow.classList.add('hidden');
@@ -63,10 +67,13 @@ function displayComputerChoice() {
     result.classList.remove('hidden');
     userChoice.classList.add('winner');
     resultMessage.textContent = 'you win';
+    scoreEl.textContent = ++score;
   } else {
     result.classList.remove('hidden');
     computerChoice.classList.add('winner');
     resultMessage.textContent = 'you lose';
+    score = 0;
+    scoreEl.textContent = score;
   }
 }
 
