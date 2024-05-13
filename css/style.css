@@ -55,10 +55,6 @@
   text-align: center;
 }
 
-.rules-header .close-btn {
-  display: none;
-}
-
 .close-btn {
   background-color: transparent;
   border: none;
