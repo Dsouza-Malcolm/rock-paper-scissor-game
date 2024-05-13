@@ -61,9 +61,11 @@ function displayComputerChoice() {
     (userSelected === 'scissor' && computerSelected === 'paper')
   ) {
     result.classList.remove('hidden');
+    userChoice.classList.add('winner');
     resultMessage.textContent = 'you win';
   } else {
     result.classList.remove('hidden');
+    computerChoice.classList.add('winner');
     resultMessage.textContent = 'you lose';
   }
 }
@@ -72,8 +74,8 @@ playAgainBtn.addEventListener('click', function () {
   triangle.classList.remove('hidden');
   resultContaienr.classList.add('hidden');
   result.classList.add('hidden');
-  computerChoice.classList.remove('rock', 'scissor', 'paper');
-  userChoice.classList.remove('rock', 'scissor', 'paper');
+  computerChoice.classList.remove('rock', 'scissor', 'paper', 'winner');
+  userChoice.classList.remove('rock', 'scissor', 'paper', 'winner');
   computerChoice.classList.add('hidden');
   waitingCircle.classList.remove('hidden');
 });
